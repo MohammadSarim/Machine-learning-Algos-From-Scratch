@@ -99,7 +99,7 @@ def predict_batch(tree, df):
 
 if __name__ == "__main__":
 
-    df_processed, target_col = load_data('Credit.csv', target_col='Balance')
+    df_processed, target_col = load_data('Data/Credit.csv', target_col='Balance')
     X = df_processed.drop(columns=[target_col])
     y = df_processed[target_col]
 

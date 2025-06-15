@@ -33,7 +33,7 @@ class Ridge_Regression:
         return X @ self.coef_ + self.bias
 
 
-df = pd.read_csv('Credit.csv')
+df = pd.read_csv('Data/Credit.csv')
 dict1 = {'No': 0, 'Yes': 1}
 
 for col in ['Own', 'Student', 'Married']:

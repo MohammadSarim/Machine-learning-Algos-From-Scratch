@@ -69,7 +69,7 @@ def predict_proba(X_new, model):
     return pd.DataFrame(probabilities, index=X_new.index)
 
 # Main execution
-df = pd.read_csv('Diabetes.csv')
+df = pd.read_csv('Data/Diabetes.csv')
 X = df.iloc[:, 2:-1]
 X = pd.get_dummies(X, columns=['Gender'], drop_first=True)
 X = X.astype(float)

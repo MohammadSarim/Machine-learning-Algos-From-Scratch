@@ -4,7 +4,7 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 from scipy import stats
 
-df = pd.read_csv('Wage.csv')
+df = pd.read_csv('Data/Wage.csv')
 df = df[['wage', 'age']]
 
 cut = 50

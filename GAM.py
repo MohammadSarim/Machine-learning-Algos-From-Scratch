@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from pygam import LinearGAM, s, f
 
-df = pd.read_csv('Wage.csv')
+df = pd.read_csv('Data/Wage.csv')
 
 df = df.dropna()
 

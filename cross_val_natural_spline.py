@@ -7,7 +7,7 @@ from sklearn.metrics import mean_squared_error
 import matplotlib.pyplot as plt
 
 # Load dataset
-df = pd.read_csv("Wage.csv")
+df = pd.read_csv("Data/Wage.csv")
 df = df[['wage', 'age']].dropna()
 
 X_base = df['age']

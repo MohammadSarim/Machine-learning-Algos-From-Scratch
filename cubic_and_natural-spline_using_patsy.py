@@ -6,7 +6,7 @@ from scipy import stats
 import patsy
 
 # Load data
-df = pd.read_csv('Wage.csv')
+df = pd.read_csv('Data/Wage.csv')
 df = df[['wage', 'age']]
 
 cut = 50  # Knot location

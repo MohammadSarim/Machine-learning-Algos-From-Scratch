@@ -28,7 +28,7 @@ class PCA:
         return X_pca, self.eigenvalues, self.eigenvectors
 
 # Load and preprocess data
-df = pd.read_csv('Credit.csv')
+df = pd.read_csv('Data/Credit.csv')
 df['Own'] = df['Own'].map({'No': 0, 'Yes': 1}).astype(float)
 df['Student'] = df['Student'].map({'No': 0, 'Yes': 1}).astype(float)
 df['Married'] = df['Married'].map({'No': 0, 'Yes': 1}).astype(float)

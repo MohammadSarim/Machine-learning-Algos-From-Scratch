@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('Wage.csv')
+df = pd.read_csv('Data/Wage.csv')
 df = df[['wage', 'age']]
 
 polynomial_degree = 3

@@ -66,7 +66,7 @@ class GradientDescent:
             
         return accuracy_score(y_true, y_pred)
 
-df = pd.read_csv('Diabetes.csv')
+df = pd.read_csv('Data/Diabetes.csv')
 X = df.iloc[:, 2:-1]
 X = pd.get_dummies(X, columns=['Gender'], drop_first=True)
 X = X.astype(float)

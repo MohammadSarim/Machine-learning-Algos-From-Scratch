@@ -32,7 +32,7 @@ class GradientDescent:
         X_test = np.c_[np.ones(X_test.shape[0]), X_test]
         return X_test @ self.coef_
 
-df = pd.read_csv('Advertising.csv')
+df = pd.read_csv('Data/Advertising.csv')
 
 X = df[['TV', 'radio']].values
 Y = df['sales'].values

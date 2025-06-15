@@ -42,7 +42,7 @@ class Lasso_Regression:
     def predict(self, X):
         return X @ self.coef_ + self.intercept_
 
-df = pd.read_csv('Credit.csv')
+df = pd.read_csv('Data/Credit.csv')
 df['Own'] = df['Own'].map({'No': 0, 'Yes': 1}).astype(float)
 df['Student'] = df['Student'].map({'No': 0, 'Yes': 1}).astype(float)
 df['Married'] = df['Married'].map({'No': 0, 'Yes': 1}).astype(float)

@@ -40,7 +40,7 @@ class GradientDescent:
         return np.mean(y_pred == Y) 
 
 
-df = pd.read_csv('Default.csv')
+df = pd.read_csv('Data/Default.csv')
 encoding_dict = {'No': 0, 'Yes': 1}
 df['default'] = df['default'].map(encoding_dict)
 df['student'] = df['student'].map(encoding_dict)

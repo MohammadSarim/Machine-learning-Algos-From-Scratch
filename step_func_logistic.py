@@ -3,19 +3,16 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 
-df = pd.read_csv('Wage.csv')
+df = pd.read_csv('Data/Wage.csv')
 df = df[['age', 'wage']]
 
 df['X_bins'] = pd.cut(df['age'], 4)
 
 X = pd.get_dummies(df['X_bins'], drop_first=True, dtype=np.float64)
 
-
 Y = df['wage'].apply(lambda x: 1 if x > 250 else 0)
 
-
 log = LogisticRegression().fit(X, Y)
-
 
 y_train_pred = log.predict(X)
 accuracy = np.mean(Y == y_train_pred)

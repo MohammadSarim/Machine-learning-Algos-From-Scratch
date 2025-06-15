@@ -83,7 +83,7 @@ def predict(X, prior, class_stats):
     return np.array(predictions)
 
 # Load and preprocess data
-df = pd.read_csv('Diabetes.csv')
+df = pd.read_csv('Data/Diabetes.csv')
 X = df.iloc[:, 2:-1]
 Y = df.iloc[:, -1].str.strip()
 

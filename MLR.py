@@ -24,7 +24,7 @@ class MLR:
         y_pred = np.dot(X_test, self.coef_) + self.intercept_
         return y_pred           
 
-df = pd.read_csv('Advertising.csv', index_col=0)
+df = pd.read_csv('Data/Advertising.csv', index_col=0)
 obj1 = MLR()
 obj1.fit(df.iloc[: , :-1].values,  df.iloc[:, -1])
 predicted  = obj1.predict([[23, 5, 6], [1, 5, 6]])

@@ -97,7 +97,7 @@ def predict_batch(tree, df):
     return np.array([predict(tree, row) for _, row in df.iterrows()])
 
 if __name__ == "__main__":
-    df_processed, target_col = load_data('Credit.csv', target_col='Student')
+    df_processed, target_col = load_data('Data/Credit.csv', target_col='Student')
     X = df_processed.drop(columns=[target_col])
     y = df_processed[target_col]
 

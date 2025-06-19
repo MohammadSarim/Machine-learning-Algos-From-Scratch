@@ -18,19 +18,22 @@ class SimplePLS:
 
         n, p = X.shape
         X_current = X.copy()
+        y_current = y.copy()
         self.beta_pls = np.zeros(p)
 
         for _ in range(self.n_components):
-            phi_m = X_current.T @ y
+            phi_m = X_current.T @ y_current
             w_m = phi_m / np.linalg.norm(phi_m)   
             z_m = X_current @ w_m
-            theta_m = (z_m @ y) / (z_m @ z_m)
+            theta_m = (z_m @ y_current) / (z_m @ z_m)
             self.beta_pls += theta_m * w_m
 
-            for j in range(p):
-                proj = (z_m @ X_current[:, j]) / (z_m @ z_m)
-                X_current[:, j] -= proj * z_m
+            # ✅ Deflate X
+            proj = (z_m @ X_current) / (z_m @ z_m)
+            X_current -= np.outer(z_m, proj)
 
+            # ✅ Deflate y
+            y_current = y_current - theta_m * z_m
 
     def predict(self, X):
         y_pred_scaled = X @ self.beta_pls
